@@ -1,0 +1,350 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff7ec;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.funcContainer {
+    height: 99%;
+    width: 18%;
+    background-color: transparent;
+    
+    display: flex;
+    flex-direction: column;                       
+    
+    justify-content: center;        /*выравнивание по главной оси*/
+    align-items: center;            /* выравнивание по поперечной оси*/
+}
+
+.tableList {
+    width: 95%;
+    height: 49%;
+    background-color: white;
+    border: 2px solid #ddceb1;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow:hidden;
+}
+.tableCaption{
+    width: 100%;
+    height: 10%;
+    background-color: #ddceb1;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newTable{
+    width: 100%;
+    height: 10%;
+    background-color: #ddceb1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tablesContainer{
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 2%;
+    overflow-y: auto;
+}
+.table {
+    width: 95%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddceb1;
+    box-sizing: border-box;
+    background-color: #fff7ec;
+    margin-bottom: 1%;
+}
+.table p {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.activeTable{
+    background-color: rgb(255, 213, 151);
+    border-color: rgb(255, 172, 64);
+}
+
+
+.buttonsContainer {
+    width: 95%;
+    height: 49%;
+    background-color: white;
+    border: 2px solid #ddceb1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+    position: relative;
+}
+.button {
+    width: 95%;
+    height: 13%;
+    /*background-color: #fff7ec;*/
+    border: 1px solid #ddceb1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    
+}
+.saveButton{
+    position: absolute;
+    bottom: 2%;
+}
+
+#saveTableButton{
+   
+    
+    outline:none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.workContainer {
+    height: 99%;
+    width: 80%;
+    
+    background-color: white;
+    border: 2px solid #ddceb1;
+    box-sizing: border-box;
+    overflow-y: auto;
+    
+}
+.workContainer table,
+.window table{
+    border-collapse: collapse;
+    width: 100%;
+    
+    table-layout: fixed;
+}
+
+.workContainer th, .workContainer td,
+.window th, .window td{
+    border: 1px solid #e9e2d7;
+    height: 25px;
+    padding: 0;
+}
+.workContainer tr:first-child {
+    height: 35px;
+}
+.workContainer th,
+.window th{
+    background-color: #ddceb1;
+
+}
+.workContainer td,
+.window td{
+   text-align: center;
+    
+}
+.workContainer th:first-child,
+.workContainer td:first-child{
+    width: 4%;
+}
+.workContainer tr td:first-child {
+    vertical-align: middle;
+}
+.workContainer td:first-child{
+    vertical-align: middle;
+}
+.workContainer input
+{
+    width: 90%;
+    height: 90%;
+    margin-bottom: 1%;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+.workContainer input:focus,
+.window input:focus{
+    outline:none;
+}
+
+/**/
+.workContainer td:nth-child(2){
+    display:flex;
+}
+.workContainer td:nth-child(2) input{
+    height: 95%;
+    width: 100%;  
+}
+/**/
+
+.workButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.workContainer th:first-child{
+    background: url(key1.png) no-repeat center;
+    background-origin: border-box;
+    background-size: 50%;
+    background-position:50%;
+}
+
+
+
+/*new changes*/
+table tr {
+    box-sizing: border-box;
+}
+/*table tr td:nth-child(2){
+
+    box-sizing: border-box;
+}*/
+table tr td:nth-child(3):hover,
+table tr td:nth-child(1) input:hover{
+    cursor:pointer;
+}
+table input:focus{
+
+    border:1px solid #ffac40;
+}
+.newTableButton{
+    width: 100%;
+    height: 100%;
+    border: none;
+    
+}
+button{
+    background-color: #ddceb1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+button:hover{
+    background-color:#dfd2b9;
+    cursor:pointer;
+}
+button:active{
+    background-color: #dfc187de;
+    
+}
+button,
+button:hover,
+button:active{
+    outline:none;
+}
+
+.tablesContainer .table:hover{
+    background-color: #f7c17a;
+    cursor: pointer;
+}
+/*new changes*/
+
+
+/*new changes2*/
+
+.activeString{
+    /*box-shadow:0 0 20px #ff0;*/
+    outline: 3px solid #ffac40;
+    /*border-top: solid 4px #ffac40;
+    border-bottom: solid 4px #ffac40;
+    border-left: solid 2px #ffac40;
+    border-right: solid 2px #ffac40;*/
+}
+
+table input:focus{
+    border: none;
+}
+
+
+.context-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 12px 0;
+    width: 240px;
+    background-color: #fff;
+    border: solid 1px #dfdfdf;
+    box-shadow: 1px 1px 2px #cfcfcf;
+}
+
+.context-menu--active {
+    display: block;
+}
+
+.context-menu__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu__item {
+    display: block;
+    margin-bottom: 1px;
+}
+
+.context-menu__item:last-child {
+    margin-bottom: 0;
+}
+
+.context-menu button {
+    display: block;
+    padding: 4px 12px;
+    color: #ffac40;
+    text-decoration: none;
+    width: 100%;
+    border: none;
+    background-color: white;
+    text-align: left;
+}
+
+.context-menu button:hover {
+    color: #fff;
+    background-color: #ffac40;
+
+
+}
+
+
+/*new changes2*/
+
+.forScrollbar::-webkit-scrollbar { width: 7px; }
+.forScrollbar::-webkit-scrollbar-button {  height: 27px; background-color: #ccb68b; }
+.forScrollbar::-webkit-scrollbar-track {  background-color: #ccb68b;}
+.forScrollbar::-webkit-scrollbar-track-piece { background-color: white;}
+.forScrollbar::-webkit-scrollbar-thumb { height: 50px; background-color: #ccb68b; border-radius: 3px;}
+.forScrollbar::-webkit-scrollbar-corner { background-color: #ccb68b;}
+.forScrollbar::-webkit-resizer { background-color: #ccb68b;}
+
+.table p::-webkit-scrollbar { height: 2px; }
+.table p::-webkit-scrollbar-button {  height: 2px; background-color: #ccb68b; }
+.table p::-webkit-scrollbar-track {  background-color: #ccb68b;}
+.table p::-webkit-scrollbar-track-piece { background-color: white;}
+.table p::-webkit-scrollbar-thumb { height: 1px; background-color: #ccb68b; border-radius: 3px;}
+.table p::-webkit-scrollbar-corner { background-color: #ccb68b;}
+.table p::-webkit-resizer { background-color: #ccb68b;}

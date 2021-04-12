@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Construct page</title>
+    <link rel="stylesheet" type="text/css" href="workPage.css">
+    <link rel="stylesheet" type="text/css" href="popup2.css">
+</head>
+<body>
+<div class="workContainer forScrollbar">
+    <form>
+        <table>
+            <tr>
+                <th></th>
+                <th>Имя поля</th>
+                <th>Тип</th>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
+<div class="funcContainer">
+    <div class="tableList">
+        <div class="tableCaption">
+            <p>Таблицы</p>
+        </div>
+        <div class="tablesContainer forScrollbar">
+
+        </div>
+        <div class=newTable>
+            <!--<p>+</p>-->
+            <button class=newTableButton id="newTableButton">+</button>
+        </div>
+    </div>
+
+    <div class="buttonsContainer">
+        <button class="button renameButton" id="renameTableButton">Переименовать таблицу</button>
+        <button class="button deleteButton" id="deleteTableButton">Удалить таблицу</button>
+        <button class="button" id="referencesButton">Создать связи</button>
+        <button class="button saveButton" id="saveTablesButton">Сохранить</button>
+    </div>
+</div>
+
+<!--всплывающее окно для определения типа поля-->
+<div class="substrate" id="substrate"></div>
+<div class="window" id="typeWindow">
+    <table>
+        <tr>
+            <th>Тип данных</th>
+            <th>Ограничения</th>
+        </tr>
+        <tr data-typeCode="varchar">
+            <td>Короткий текст</td>
+            <td><input type="number" step="1" min="0" max="65535" value="255" title="Допустимое значение: от 0 до 65535" ></td>
+        </tr>
+        <tr data-typeCode="text">
+            <td>Длинный текст</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="bool">
+            <td>Логический</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="bigint">
+            <td>Bigint</td>
+            <td><input type="number" step="1" min="0" max="19" value="15" title="Допустимое значение: от 0 до 19"></td>
+        </tr>
+        <tr data-typeCode="int">
+            <td>Целое</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="float">
+            <td>Числовой</td>
+            <td><input type="number" step="1" min="0" max="53" value="15" title="Допустимое значение: от 0 до 53"></td>
+        </tr>
+        <tr data-typeCode="date">
+            <td>Дата</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="serial">
+            <td>Счётчик</td>
+            <td>-</td>
+        </tr>
+    </table>
+    <div class="windowControlContainer">
+        <button id="applyButton">Применить</button>
+        <button id="closeTypeButton">Закрыть</button>
+    </div>
+
+</div>
+
+<div class="window" id="referencesWindow">
+    <table>
+        <tr>
+            <th>Тип данных</th>
+            <th>Ограничения</th>
+        </tr>
+        <tr data-typeCode="varchar">
+            <td>Короткий текст</td>
+            <td><input type="number" step="1" min="0" max="65535" value="255" title="Допустимое значение: от 0 до 65535" ></td>
+        </tr>
+        <tr data-typeCode="text">
+            <td>Длинный текст</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="bool">
+            <td>Логический</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="bigint">
+            <td>Bigint</td>
+            <td><input type="number" step="1" min="0" max="19" value="15" title="Допустимое значение: от 0 до 19"></td>
+        </tr>
+        <tr data-typeCode="int">
+            <td>Целое</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="float">
+            <td>Числовой</td>
+            <td><input type="number" step="1" min="0" max="53" value="15" title="Допустимое значение: от 0 до 53"></td>
+        </tr>
+        <tr data-typeCode="date">
+            <td>Дата</td>
+            <td>-</td>
+        </tr>
+        <tr data-typeCode="serial">
+            <td>Счётчик</td>
+            <td>-</td>
+        </tr>
+    </table>
+    <div class="windowControlContainer">
+        <button id="applyButton">Применить</button>
+        <button id="closeTypeButton">Закрыть</button>
+    </div>
+
+</div>
+
+
+<div class="context-menu">
+    <ul class="context-menu__items">
+        <li class="context-menu__item">
+            <button id="saveStr_contextmenu">Сохранить строку(Enter)</button>
+        </li>
+        <li class="context-menu__item">
+            <button id="deleteStr_contextmenu">Удалить строку</button>
+        </li>
+        <li class="context-menu__item">
+            <button id="closeMenu_contextmenu">Закрыть меню</button>
+        </li>
+    </ul>
+</div>
+
+<script src="tablesManager.js"></script>
+<script src="interfaces.js"></script>
+<script src="control.js"></script>
+</body>
+</html>
