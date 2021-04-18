@@ -157,6 +157,7 @@ class TablesManager {
     parseObjToJSON() {
         let res_json = '[';
         let json;
+        let IndexedDbTables = new Array();
         for(let tableId in this.tablesList) {
             let curTable = this.tablesList[tableId];
             if(res_json!='[') res_json += ',';
@@ -179,9 +180,11 @@ class TablesManager {
             }
             //TODO parse foreign keys
             json = JSON.stringify(tableObj);
+            IndexedDbTables.push(json);
             res_json = res_json + json;
         }
         res_json += ']';
+        StoreTables(IndexedDbTables);
         console.log(res_json);
         return res_json;
     }
