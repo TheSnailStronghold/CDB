@@ -1,11 +1,11 @@
-let cacheName='v0.1';
+let cacheName='v0.2';
 
 let cacheFiles = [
-  './',
-	'./index.html',
+  './index.html',
   './popup2.css',
   './workPage.css',
-  './workPage.js',
+  './tablesManager.js',
+  './interfaces.js',
   './key1.png',
 	'./app.js',
   './manifest.json',
@@ -69,9 +69,8 @@ function TryGetFromNetwork(request, timeout) {
 function GetFromCache(request) 
 {
     return caches.open(cacheName).then((cache) =>
-        cache.match(request).then((matching) =>
-            matching || Promise.reject('no-match')
-        ));
+        cache.match(request)
+        );
 }
 
 function UpdateCacheFile(request,response)
@@ -81,7 +80,7 @@ function UpdateCacheFile(request,response)
       cache.match(request).then( (matching) =>
         {
           if (debug) console.log('Update file in cache!');
-          return cache.put(matching,response);
+          return cache.put(request.url,response);
         }
       )
     }

@@ -5,7 +5,7 @@ const isDebug=false;
 
 IDB.onupgradeneeded = (event) => {
   RequestStorage = event.target.result;
-  RequestStorage.createObjectStore("TablesStorage", {autoIncrement: true});
+  RequestStorage.createObjectStore("TablesStorage", {keyPath:index});
 }
 
 IDB.onsuccess = (event) => {
@@ -54,8 +54,10 @@ const StoreTables = (TablesArray) =>
   let store = transaction.objectStore('TablesStorage');
 
   store.clear();
+  let i=0;
   TablesArray.forEach(element => {
-    store.add(element);
+    store.add(element,i);
+    i++;
   });
 
   transaction.onsuccess = (event) => {
